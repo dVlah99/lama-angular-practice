@@ -1,0 +1,23 @@
+{
+    "MFST":[
+       {
+          "name":"links22222",
+          "url":"https://www.google.com"
+       },
+       {
+          "name":"otherLInks2222222",
+          "url":"https://github.com"
+       }
+    ],
+    "FESB":[
+        {
+           "name":"topli",
+           "url":"https://www.google.com"
+        },
+        {
+           "name":"bureci",
+           "url":"https://github.com"
+        }
+     ],
+     "KIF":[ ]
+ }

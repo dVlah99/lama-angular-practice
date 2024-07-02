@@ -1,0 +1,31 @@
+<div class="popUpDiv">
+  <div class="upperRow">
+    <button (click)="toggleEditMode()">
+      {{ editMode ? "Exit Edit Mode" : "Edit" }}
+    </button>
+  </div>
+  <div class="middleRow">
+    <app-see-json-data [data]="data" *ngIf="!editMode"></app-see-json-data>
+    <app-edit-json-popup
+      [inputData]="data"
+      [inputKey]="key"
+      *ngIf="editMode"
+      (dataChanges)="sendChanges($event)"
+      (deleteClientOutput)="handleClientDelete($event)"
+    ></app-edit-json-popup>
+  </div>
+  <div class="bottomRow">
+    <button
+      id="closeBtn"
+      (click)="closeDialog()"
+      [disabled]="editMode"
+      [ngClass]="{ editModeBtn: editMode }"
+      (click)="showEditModeMessage()"
+    >
+      Close
+    </button>
+    <p *ngIf="showCloseMessage" class="editModeMessage">
+      Please exit edit mode to close the dialogue.
+    </p>
+  </div>
+</div>

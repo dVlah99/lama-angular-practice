@@ -1,0 +1,92 @@
+.main {
+  display: flex;
+  // flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 132px);
+  background-color: #2680ff;
+}
+
+.nameUrlBubbles-container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin-bottom: 400px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &.opened {
+    margin-top: 200px;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    transform: translateX(-600px);
+    max-height: 500px;
+  }
+}
+
+.NameAndLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  flex-basis: calc(33.33% - 20px);
+}
+
+.CircleLink {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #2680ff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-right: 0;
+  margin: 10px;
+
+  &.selected {
+    background-color: #215475;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: #2980b9;
+
+    .Name {
+      display: block;
+      position: absolute;
+      color: black;
+      font-size: 16px;
+    }
+  }
+}
+
+button {
+  padding: 12px 24px;
+  background-color: white;
+  color: #2680ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+  outline: none;
+
+  &:hover {
+    background-color: whitesmoke;
+    transform: translateY(-2px);
+  }
+}

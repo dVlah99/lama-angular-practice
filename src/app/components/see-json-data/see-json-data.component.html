@@ -1,0 +1,11 @@
+<div class="view-box">
+  <ul>
+    <li *ngFor="let item of data; let i = index">
+      <a [href]="item.url" target="_blank" class="link-item">
+        <div class="clickable-rectangle">
+          <span class="name">{{ item.name }}</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

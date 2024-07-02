@@ -1,0 +1,81 @@
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: black;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: white;
+  color: #3498db;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+#restoreBtn {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#deleteItemBtn {
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: whitesmoke;
+}
+
+button:disabled {
+  background-color: #8d8686;
+  cursor: not-allowed;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: solid white;
+  align-items: center;
+}
+
+.invalid-url {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.invalid {
+  color: red;
+}
+
+.button-group {
+  text-align: center; /* Align buttons in the button group to the center */
+  margin-top: 20px; /* Add some space above the button group */
+}
+
+.button-disabled {
+  background-color: red;
+}
+
+.button-group button {
+  margin: 0 5px; /* Add some space between buttons */
+  display: inline-block; /* Ensure buttons are displayed next to each other */
+}

@@ -1,0 +1,52 @@
+<form [formGroup]="editForm">
+  <div formArrayName="items">
+    <div
+      *ngFor="let item of itemData?.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <label>Name:</label>
+      <input formControlName="name" />
+      <div
+        class="error-message"
+        *ngIf="editForm.get('items.' + i + '.name')?.hasError('required')"
+      >
+        Name is required
+      </div>
+      <div
+        class="error-message"
+        *ngIf="editForm.get('items.' + i + '.name')?.hasError('minlength')"
+      >
+        Name must be at least 2 characters long
+      </div>
+      <label>URL:</label>
+      <input formControlName="url" />
+      <div
+        class="error-message"
+        *ngIf="editForm.get('items.' + i + '.url')?.hasError('required')"
+      >
+        URL is required
+      </div>
+      <div
+        class="error-message"
+        *ngIf="editForm.get('items.' + i + '.url')?.hasError('pattern')"
+      >
+        Please enter a valid URL
+      </div>
+
+      <br /><br />
+
+      <div>
+        <button id="deleteItemBtn" (click)="removeItem(i)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="button-group">
+  <button (click)="addNewItem()">+</button>
+  <button id="restoreBtn" (click)="restoreData()">Restore</button>
+  <button (click)="deleteClient()">Delete client</button>
+  <button [disabled]="!editForm.valid" (click)="saveChanges()">
+    Save changes
+  </button>
+</div>

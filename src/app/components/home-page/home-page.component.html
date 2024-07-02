@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="main">
+  <div
+    class="nameUrlBubbles-container"
+    [class.opened]="isOpened || newClientWindow"
+  >
+    <div class="NameAndLink" *ngFor="let key of keyValues">
+      <button
+        class="CircleLink"
+        [class.selected]="isSelected(key)"
+        (click)="showDialog(key)"
+        [disabled]="editMode"
+      >
+        {{ key }}
+      </button>
+    </div>
+
+    <div class="addNewClient NameAndLink">
+      <button
+        class="CircleLink"
+        (click)="opetAddNewClientWindow()"
+        [disabled]="editMode"
+      >
+        +
+      </button>
+    </div>
+  </div>
+
+  <div class="custom-modal" *ngIf="isOpened">
+    <app-popup-div
+      [input]="bubbleData"
+      [key]="selectedKey"
+      (output)="receiveBooleanValue($event)"
+      (editModeChange)="handleEditModeChange($event)"
+      (keyDelete)="handleDeleteKey($event)"
+    >
+      >
+    </app-popup-div>
+  </div>
+
+  <div class="custom-modal" *ngIf="newClientWindow">
+    <app-add-new-client
+      (closeNewClientWindow)="handleNewClientWindow($event)"
+      (output)="handleNewKey($event)"
+    >
+    </app-add-new-client>
+  </div>
+</div>
